@@ -1,0 +1,74 @@
+{
+  "Speiseplan": {
+    "Monday": {
+      "funk": [
+        "Gebratenes Schweineschnitzel \"Ungarische Art\" mit Paprika - Rahmsauce, Balkangemüse und frittierte Kartoffelspalten",
+        "3,30 €"
+      ],
+      "lunch": [
+        "Kalbsfrikassee \"Berliner Art\" in Champignon - Rieslingsauce, französische Erbsen, Salzkartoffeln oder Langkornreis",
+        "5,55 €"
+      ],
+      "gourmet": [
+        "\"Petto di Pollo Picante\" feurig gewürzte Salbei - Hähnchenbrust, live an der Grillstation zubereitet, leichter Grana Padano - Käseschaum, Fettuccine - Nest und Salat vom Rondell",
+        "5,55 €"
+      ]
+    },
+    "Tuesday": {
+      "funk": [
+        "Westfälischer Kartoffeleintopf mit frischen Wurzelgemüsewürfeln und geräuchertem Speck (Schw.), bergische Bock - oder Mettwurst, Brötchen",
+        "3,30 €"
+      ],
+      "lunch": [
+        "Pikantes irisches Lammragout in Olivensauce, tomatisiertes Gemüse und Penne - Nudeln",
+        "5,99 €"
+      ],
+      "gourmet": [
+        "Halbe französische Poularde live von der Grillstation, Preiselbeer - Cherrysauce, Kroketten und Salat vom Rondell",
+        "5,99 €"
+      ]
+    },
+    "Wednesday": {
+      "funk": [
+        "\"Pasta asciutta\" Bologneser Nudelgericht mit herzhafter Hackfleischsauce vom Rind, geriebenem Käse und Salat vom Buffet",
+        "3,30 €"
+      ],
+      "lunch": [
+        "Truthahnsteak \"Hawaii\" mit Ananas und Käse überbacken, warmes Schattenmorellen - Kompott, fruchtiges Gartengemüse und Röstitaler ",
+        "5,55 €"
+      ],
+      "gourmet": [
+        "Vom Grill: Tranche vom Norwegischen Lachs, Bärlauchschaum, Karotten - Lauchgemüse und Pilzrisotto",
+        "6,50 €"
+      ]
+    },
+    "Thursday": {
+      "funk": [
+        "Gebratene Berliner Bulette \"A la Meyer\" (Schw.), Sauce Robert, Weinsauerkraut und Kartoffelpüree",
+        "3,30 €"
+      ],
+      "lunch": [
+        "Drei gebackene Rheinische Reibeküchlein, Sour Cream, großer Räucherlachsteller mit frischen Blattsalaten und Ei garniert",
+        "5,99 €"
+      ],
+      "gourmet": [
+        "Gebratener Kalbsrücken \"zart rosa\" von der Tranchierstation, Waldpilz - Barolo - Sauce, frisches Marktgemüse und Butter - Knöpfli",
+        "6,99 €"
+      ]
+    },
+    "Friday": {
+      "funk": [
+        "\"Pork Chop Suey\" marinierte Schweinefleischwürfel mit karamellisierten Früchten \"süß - sauer\", Asia - Wokgemüse und Pilawreis",
+        "3,30 €"
+      ],
+      "lunch": [
+        "Fangfrischer Tagesfisch mit korrespondierenden Beilagen",
+        "4,99-6,50€"
+      ],
+      "gourmet": [
+        "Gebratenes Rib Eye Steak vom Argentinischen Angusrind \"zart rosa\" an der Livestation zubereitet, Sauce Diable, Prinzessböhnchen und Gratin Dauphinoise",
+        "6,50 €"
+      ]
+    }
+  }
+}

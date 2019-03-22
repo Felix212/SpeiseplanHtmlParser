@@ -1,0 +1,221 @@
+.news-listenansicht-container-start {
+}
+.news-listenansicht-item {
+	border-bottom: solid 1px #003366;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.news-listenansicht-item img {
+	margin: 3px;
+	margin-left: 0;
+}
+.news-listenansicht-item h2 {
+	margin-top: 0;
+
+}
+.ppw-news-list h2 {
+	font-size: 1.3em;
+	margin-bottom: 0.4em;
+}
+.clearer {
+	clear: both
+}
+.news-listenansicht-container-start a {
+	color: #2E5CB7;
+}
+.news-listenansicht-container-start a:visited {
+	color: #2E5CB7;
+}
+.news-listenansicht-rechts-item a:hover {
+	color: orange
+}
+.news-listenansicht-container-start a:active, .news-listenansicht-container-start a:hover {
+	color: orange;
+}
+.news-listenansicht-container-start h1 a, .news-listenansicht-container-start h1 a:visited {
+	color: #003366;
+}
+.news-listenansicht-container-start h1 {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+/* Paragraphen als inline (damit more link direkt daran) */
+.news-listenansicht-container-start p {
+	clear: none;
+	display: inline;
+}
+span.news-latest-morelink {
+	margin-left: 5px
+}
+.news-list-date {
+	font-weight: bold;
+	color: #000000
+}
+.news-listenansicht-rechts-item a, .news-listenansicht-rechts-item a:visited {
+	color: #2E5CB7;
+}
+span.news-latest-morelink a {
+	color: #2E5CB7;
+	background-image: url(../IMG/arrow.gif);
+	padding-right: 12px;
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+/*span.news-latest-morelink a:visited {
+	color: #2E5CB7;
+}
+*/
+span.news-latest-morelink a:active, span.news-latest-morelink a:hover {
+	color: orange;
+}
+.newsimageleft {
+	float: left;
+	margin-right: 5px
+}
+.news-single-item {
+	margin-bottom: 10px
+}
+.news-single-item .newsimagecolumn {
+	padding-top: 3px
+	max-width: 220px;
+}
+.news-single-item .newsimagecolumn img, .newsimageleft img {
+	border: 0px solid #00407B;
+	margin-bottom: 5px
+}
+.news-single-timedata {
+	font-weight: bold;
+	color: #000000
+}
+.news-single-item h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px
+}
+.news-single-backlink {
+	margin-top: 10px
+}
+.news-single-item table, .news-single-item td {
+	margin: 0px;
+	padding: 0px
+}
+.news-single-img {
+	padding-right: 5px;
+}
+.news-single-img.block {
+	margin-bottom: 15px;
+}
+/****** Anpassungen f�r Template Rechte seite ******/
+.news-list-container-rechts {
+	font-size: 12px
+}
+.news-listenansicht-rechts-item {
+	border-bottom: solid 1px #003366;
+	padding-top: 2px;
+	margin-bottom: 6px
+}
+/*Verhindere Umbruch nach Absatz so das mehr direkt dahinter steht: */
+.news-listenansicht-rechts-item p {
+	clear: none;
+	display: inline;
+	line-indent: 30px
+}
+.news-listenansicht-rechts-item {
+	padding-left: 4px
+}
+div.news-list-date-rechtelistenansicht {
+	color: #003366;
+	margin-bottom: 4px
+}
+h1.listenansicht {
+	margin-bottom: 1px
+}
+.news-listenansicht-rechts-item .news-list-date {
+	font-weight: bold;
+	color: #003366
+}
+span.news-rechts-morelink {
+	margin-left: 5px;
+	color: #2E5CB7;
+	background-image: url(../IMG/arrow.gif);
+	padding-right: 12px;
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+.newsimageright {
+	float: right;
+	margin-left: 5px
+}
+/******ARCHIVMENU***/
+.news-amenu-container ul {
+	margin: 0px;
+	padding: 0px
+}
+/****Miniliste **/
+#centerwrap .news-miniliste {
+	margin: 0 0 5px 0
+}
+#centerwrap .news-miniliste h3,
+#centerwrap .news-miniliste h2,
+#centerwrap .news-miniliste h1 {
+	font-size: 1.1em;
+	background-image: url(../IMG/arrow.gif);
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	padding: 0 0 0 14px;
+	margin: 3px 0 3px 0
+}
+#centerwrap .news-miniliste .ppw-first-item h3,
+#centerwrap .news-miniliste .ppw-first-item h2,
+#centerwrap .news-miniliste .ppw-first-item h1 {
+	background: none;
+}
+#centerwrap .news-miniliste h3 span.news-list-date,
+#centerwrap .news-miniliste h2 span.news-list-date,
+#centerwrap .news-miniliste h1 span.news-list-date {
+	margin: 0 0 0 10px;
+	color: #587DC5;
+	font-size: 0.8em;
+}
+#centerwrap .news-miniliste h3,
+#centerwrap .news-miniliste h2,
+#centerwrap .news-miniliste h1 {
+	font-size: 1.1em;
+	background-image: url(../IMG/arrow.gif);
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	padding: 0 0 0 14px;
+	margin: 3px 0 3px 0
+}
+#centerwrap .news-miniliste h3 span.news-list-date,
+#centerwrap .news-miniliste h2 span.news-list-date,
+#centerwrap .news-miniliste h1 span.news-list-date {
+	margin: 0 0 0 10px;
+	color: #587DC5;
+	font-size: 0.8em;
+}
+
+/* Anpassung 2015 */
+.news-single-img.float-left {
+	float: left;
+	padding-right: 10px;
+	width: 220px;
+}
+.news-single-text img, .news-single-text.float-left img {
+	float: left;
+	margin: 5px 10px 5px 0;
+}
+.news-single-text.float-right img {
+	float: right;
+	/*margin: 5px 0 5px 10px;*/
+}
+.news-single-timedata {
+	color: #000000;
+	font-weight: bold;
+	margin: 10px 0;
+}
+.news-single-imgcaption {
+    font-size: 0.84em;
+    padding-bottom: 8px;
+}
+/* END - Anpassung 2015 */

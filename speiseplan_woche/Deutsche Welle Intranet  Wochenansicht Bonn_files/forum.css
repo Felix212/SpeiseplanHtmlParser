@@ -1,0 +1,618 @@
+/* BASIC STUFF */
+#tx_chcforum-pi1 {
+	font-family: arial, sans-serif;
+ padding-right: 3px;
+	
+}
+
+#tx_chcforum-pi1 caption {
+	display: none;
+}
+
+#tx_chcforum-pi1 a {
+	text-decoration: underline;
+}
+
+#tx_chcforum-pi1 a:hover {
+	text-decoration: none !important;
+}
+
+/* only one form in the forum */
+#tx_chcforum-pi1 form {
+	margin-top: 20px;
+}
+
+
+/* GENERIC TABLE BEGIN */
+.tx-chcforum-pi1-Table {
+	border: 1px solid #2E5CB7;
+	background: #FFFFFF;
+	margin-bottom: 3px;
+	width: 580px;
+}
+
+.tx-chcforum-pi1-Table thead tr th {
+	font-size: 14px;
+	font-weight: bold;
+	background: #003366 ;
+color: #fff;
+	padding: 5px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+/* category title row */
+.tx-chcforum-pi1-Table tbody tr th {
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 2px;
+color: #003366;
+	background: #fff;
+	padding: 5px;
+	text-align: left;
+}
+
+/* category features row */
+.tx-chcforum-pi1-Table tbody tr td {
+font-size: 12px;
+	background: #E0E7F4;
+	padding: 5px;
+}
+/* GENERIC TABLE END */
+
+
+/* CATEGORY TABLE BEGIN */
+/* cell 1 */
+.tx-chcforum-pi1-catConferenceCell {
+
+}
+
+.tx-chcforum-pi1-catConferenceCell dl {
+	margin: 0;
+}
+
+.tx-chcforum-pi1-catConferenceCell dt {
+
+}
+
+.tx-chcforum-pi1-catConferenceCell dd {
+	font-size: 0.9em;
+	margin-left: 5px;
+}
+
+.tx-chcforum-pi1-catConferenceCell dd.new {
+	color: #EE0000;
+}
+
+/* cell 2 */
+.tx-chcforum-pi1-catThreadCell {
+	text-align: center;
+}
+
+/* cell 3 */
+.tx-chcforum-pi1-catPostCell {
+	text-align: center;
+}
+
+/* cell 4 */
+.tx-chcforum-pi1-catLastCell {
+	font-size: 10px !important;
+	vertical-align: top;
+}
+/* CATEGORY TABLE END */
+
+
+/* CONFERENCE TABLE BEGIN */
+/* cell 1 */
+.tx-chcforum-pi1-confThreadSubjCell {
+
+}
+
+.tx-chcforum-pi1-confThreadNew {
+	color: #F00;
+	font-size: 0.9em;
+	padding-left: 5px;
+}
+
+.tx-chcforum-pi1-confThreadBtns img {
+	padding-top: 5px;
+}
+
+.tx-chcforum-pi1-confThreadBtns {
+	padding-left: 5px;
+}
+
+/* cell 2 */
+.tx-chcforum-pi1-confThreadRepliesCell {
+	text-align: center;
+}
+
+/* cell 3 */
+.tx-chcforum-pi1-confThreadAuthorCell {
+	text-align: center;
+}
+
+/* cell 4 */
+.tx-chcforum-pi1-confThreadLastCell {
+	font-size: 10px !important;
+}
+
+/* CONFERENCE TABLE END */
+
+/* NAVPATH BEGIN*/
+.tx-chcforum-pi1-navPath {
+	background: #B6C6E6 ;
+	border: 1px solid #000000;
+/*	margin: 12px 0 15px 0; */
+	margin-bottom: 3px;
+	margin-top: 15px;
+	padding: 3px;
+	font-size: 0.9em;
+}
+/* NAVPATH END*/
+
+/* PAGELINKS BEGIN */
+.tx-chcforum-pi1-pageLinksTop, .tx-chcforum-pi1-pageLinksBtm {
+	background: #B6C6E6 ;
+	border: 1px solid #000000;
+	font-size: 0.9em;
+	margin-bottom: 3px;
+	padding: 3px;	
+	text-align: right;
+	clear: both;
+}
+/* PAGELINKS END */
+
+/* POST FORM BEGIN */
+.tx-chcforum-pi1-postForm {
+	border: 1px solid #2E5CB7 ;
+	background: #E3E7EF;
+	padding: 0px;
+	margin-bottom: 3px;
+}
+
+.tx-chcforum-pi1-postForm fieldset label {
+	display: block;
+	text-align: right;
+	padding-right: 20px;
+	width: 150px;
+	float: left;
+}
+
+.tx-chcforum-pi1-postForm fieldset#formTop input {
+	display: block;
+	width: 150px;
+	float: left;
+	padding: 2px;
+	border: 1px solid #000000;
+	margin-bottom: 3px;
+}
+
+.tx-chcforum-pi1-postForm textarea {
+	border: 1px solid #000000;
+	margin: 3px 0;
+	width: 100% ;
+	height: 150px;
+}
+
+.tx-chcforum-pi1-postForm fieldset#formTop br {
+	clear:left;
+}
+
+.tx-chcforum-pi1-formBtn {
+	text-align: center;
+}
+
+.tx-chcforum-pi1-formBtn input {
+	border: 1px solid #2E5CB7 ;
+	font-size:0.9em;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	margin:2px;
+	background-color: #FFF;
+
+}
+
+.tx-chcforum-pi1-formBtnHov {
+	border: 1px solid #666; 
+	font-size:0.9em;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	margin:2px;
+	background-color: #FFF;
+	color: #CC0000;
+}
+
+.tx-chcforum-pi1-formBtnStyle {
+	background-color: #FFF;
+	border: 1px solid #000000;
+	padding: 3px;
+	margin: 3px;
+}
+
+.tx-chcforum-pi1-formBtnStyleHov {
+	background-color: #FFF;
+	border: 1px solid #C00;
+	color: #CC0000;
+	padding: 3px;
+	margin: 3px;
+}
+/* POST FORM END */
+
+/* SINGLE POST BEGIN */
+.tx-chcforum-pi1-singlePost {
+	border: 1px solid #000000;
+	margin: 3px 0;
+	margin-bottom: 10px;
+}
+
+/* top */
+.tx-chcforum-pi1-singlePost .author {
+	background: #E3E7EF;
+	padding: 3px;
+	vertical-align: top;
+	height: 78px;
+}
+
+.tx-chcforum-pi1-formEmicoStyle {
+	margin: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .im {
+	vertical-align: middle;
+	margin-top: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .im a {
+	margin-right: 10px;
+}
+
+.tx-chcforum-pi1-singlePost .im img {
+	vertical-align: middle;
+	border: 0px;
+	padding-right: 2px;
+	margin-bottom: 2px;
+}
+
+.tx-chcforum-pi1-singlePost .userPic {
+	border: 1px solid #000000;
+	float: right;
+}
+/* deprecated */
+.tx-chcforum-pi1-singlePost #userPic {
+	border: 1px solid #000000;
+	float: right;
+}
+
+/* middle */
+.tx-chcforum-pi1-singlePost .text {
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	background: #E3E7EF;
+}
+
+.tx-chcforum-pi1-singlePost .scroller {
+	overflow: auto;
+	width: 95%;
+	background: #FFF;
+	min-height: 125px;
+	text-indent: 0px;
+	padding: 3px;
+}
+
+/* bottom */
+.tx-chcforum-pi1-singlePost .edit {
+	background: #F3F5F8;
+	padding: 3px;
+	height: 19px;
+	vertical-align: middle;
+	margin-top: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .edit a {
+	margin-right: 30px;
+}
+
+.tx-chcforum-pi1-singlePost .edit img {
+	vertical-align: middle;
+	border: 0px;
+}
+
+.tx-chcforum-pi1-singlePost .attachment {
+	background: #DEE3E7;
+	padding: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .attachment div {
+	vertical-align: top;
+}
+
+.tx-chcforum-pi1-singlePost .attachment img {
+	float: left;
+	margin-right: 5px;
+}
+
+.tx-chcforum-pi1-singlePost .rate {
+	background: #DEE3E7;
+	border-top: 3px solid #FFFFFF ;
+	padding: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .rate input {
+	background-color: #FFF;
+	border: 1px solid #000000;
+	font-size: 9px;
+}
+
+.tx-chcforum-pi1-singlePost .rate select {
+	border: 1px solid #000000;
+	font-size: 0.9em;
+}
+
+.tx-chcforum-pi1-singlePost .rate select option {
+	height: 1.5em;
+}
+
+.tx-chcforum-pi1-singlePost .rate form {
+	padding: 0;
+	margin: 0;
+	display: inline;
+}
+
+.tx-chcforum-pi1-singlePost .rate .rateStars {
+	float: left;
+	text-align: left;
+	height: 1.85em;
+}
+
+.tx-chcforum-pi1-singlePost .rate .rateMenu {
+	text-align: right;
+	width: 100%;
+	height: 1.85em;
+}
+
+.tx-chcforum-pi1-singlePost .offset {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.tx-chcforum-pi1-singlePost .codeCell {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	padding: 5px;
+	background-color: #FAFAFA; 
+	border: #D1D7DC; 
+	border-style: solid;
+	border-left-width: 1px; 
+	border-top-width: 1px; 
+	border-right-width: 1px; 
+	border-bottom-width: 1px
+}
+
+.tx-chcforum-pi1-singlePost .quoteCell {
+	background-color: #FAFAFA;
+	font-size: 0.9em;
+	padding: 5px;
+	border: #D1D7DC; 
+	border-style: solid;
+	border-left-width: 1px; 
+	border-top-width: 1px; 
+	border-right-width: 1px; 
+	border-bottom-width: 1px
+}
+
+.tx-chcforum-pi1-singlePost .quoteCellAuthor {
+	border: 0px;
+	font-weight: bold;
+	padding: 3px 0;
+}
+
+.tx-chcforum-pi1-singlePost .quoteTable {
+	border: 0px;
+	margin: 15px 0;
+}
+
+.tx-chcforum-pi1-singlePost .text img {
+	max-height: 350px;
+	max-width: 350px;
+}
+
+.tx-chcforum-pi1-singlePostQuoteText {
+	background-color: #FAFAFA;
+	border: 1px solid #000000;
+	font-size: 0.9em;
+	padding: 5px;
+}
+
+
+/* SINGLE POST END */
+
+
+/* FOOTER BOX BEGIN */
+.tx-chcforum-pi1-footerBox {
+	background: #A7B3CB;
+	padding: 3px;
+	border: 1px solid #999999;
+	font-size: 0.9em; 
+}
+
+/* used for user listing */
+.tx-chcforum-pi1-footerBox div { 
+	padding-top: 5px; 
+	padding-left: 5px;
+	font-size: 0.9em; 
+}
+/* FOOTER BOX END */
+
+/* HEADER BOX BEGIN */
+.header_center {	
+  text-align: center;
+	height: 34px;
+}
+.header_text {
+	font-size: 1.3em;
+	line-height: 1.4em; 
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+.header_small {
+	margin-bottom: 3px;
+	border: solid #000000 1px;
+}
+/* HEADER BOX END */
+
+/* TOOL BAR  BEGIN */
+.tx_chcforum-pi1-toolBar {
+	background: #DEE3E7;
+	border: 1px solid #000000;
+	margin-bottom: 3px;
+	padding-right: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.tx_chcforum-pi1-toolBar img {
+	vertical-align: middle;
+	margin-left: 16px;
+}
+
+.tx_chcforum-pi1-toolBar div {
+	line-height: 30px;
+	text-align: right;
+	font-size: 9px;
+	font-weight: bold;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+.tx_chcforum-pi1-subToolBar {
+	background: #DEE3E7;
+	border: 1px solid #000000;
+	margin-bottom: 3px;
+	padding-right: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.tx_chcforum-pi1-subToolBar img {
+	vertical-align: middle;
+	margin-left: 16px;
+}
+
+.tx_chcforum-pi1-subToolBar div {
+	line-height: 30px;
+	text-align: right;
+	font-size: 9px;
+	font-weight: bold;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+
+/* TOOL BAR  END */
+
+/* PROFILE BEGIN */
+.tx-chcforum-pi1-profileBorder {
+	border: 1px solid #999999;
+	padding: 3px;
+}
+
+.tx-chcforum-pi1-profileBorder #userPic {
+	border: 1px solid #000000;
+	float: right;
+}
+
+.tx-chcforum-pi1-profileBorder hr {
+	clear: left;
+	display: block;
+	visibility: hidden;
+}
+
+.tx_chcforum-pi1-profileHdrBig {
+	background: #DEE3E7;
+	border: 1px solid #000000;
+	padding: 5px;
+	margin-bottom: 3px;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.tx_chcforum-pi1-profile_hdr {
+	font-size: 11px;
+  font-weight: bold;
+  background: #E3E7EF;
+  padding: 2px;
+	padding-left: 6px;
+}
+/* PROFILE END */
+
+
+
+/* MESSAGE BOX BEGIN */
+.tx-chcforum-pi1-errorBoxCell {
+	background: #E3E7EF;
+	font-weight: bold;
+	text-align: left;
+}
+
+.tx-chcforum-pi1-messageBoxErrorNoBorder {
+	background: #FFD6EF;
+	font-weight: bold;
+	text-align: left;
+	margin-bottom: 3px;
+	padding: 3px;
+	font-weight: bold;
+}
+
+
+.tx-chcforum-pi1-messageBox, .tx-chcforum-pi1-messageBoxError {
+	background: #FFD6EF;
+	border: 1px dotted #FF0000;
+	margin-bottom: 3px;
+	padding: 3px;
+	font-weight: bold;
+}
+/* MESSAGE BOX END */
+
+.tx-chcforum-pi1-forumTextBig {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.tx-chcforum-pi1-helpBox {
+	background-color: #E3E7EF !important;
+	border-style: none;
+}
+
+.tx-chcforum-pi1-linkUp {
+	background: #DEE3E7;
+	border: 1px solid #000000;
+	margin: 12px 0 15px 0;
+	padding: 3px;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.tx-chcforum-pi1-previewBoxCell {
+	background: #A7B3CB;
+	text-align: center;
+}
+
+/* CWT COMMUNITY STYLES */
+
+#tx_chcforum-pi1 .tx-cwtcommunity-pi1 .userlistLetters {
+	font-weight: bold;
+}
+#tx_chcforum-pi1 .tx-chcforum-pi1-Table .tx-cwtcommunity-pi1 form {
+	margin: 0px;
+	padding: 0px;
+	font-family: arial, sans-serif;
+}
+#tx_chcforum-pi1 .tx-chcforum-pi1-Table .tx-cwtcommunity-pi1 td {
+	font-family: arial, sans-serif;
+	padding: 2px;
+}
+#tx_chcforum-pi1 .tx-chcforum-pi1-Table .tx-cwtcommunity-pi1 th {
+	background: #E3E7EF;
+	font-family: arial, sans-serif;
+	font-size: 11px;
+	padding: 2px;
+	text-align: left;
+	letter-spacing: 0px;
+}

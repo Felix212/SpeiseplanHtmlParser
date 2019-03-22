@@ -1,0 +1,37 @@
+@media print {
+   BODY {BACKGROUND-COLOR: #fff}
+   .maintext {position:absolute; top: 100px; left: 0px; z-index:9; BACKGROUND-COLOR: #fff; width: 500px}
+   .maintext .tx-vmMitarbeiterliste-pi1 table {width: 500px}
+    .maintext .tx-vmMitarbeiterliste-pi1 td {font-size: 12px} 
+	/* Speiseplan anpassen - schriftgroesse und tabellen so das auf a4 skaliert*/
+	.maintext .tx-tmlunchmenu-pi1 table.menuweek {width: 540px}
+	.maintext .tx-tmlunchmenu-pi1 table.menuweek th , .maintext .tx-tmlunchmenu-pi1 table.menuweek td {font-size: 7px; width: 20px}
+	.maintext .tx-tmlunchmenu-pi1 table.menuday {width: 500px}
+   .mainmenu {visibility: hidden}
+   .center_menu {visibility: hidden}
+   .dwpart {visibility: hidden}
+     .center2  {width: 500px}
+
+
+body.printversion {
+background-image: none;
+}
+
+#printwrapper {
+ width: 550px;
+ text-align: left;
+}
+
+.ppw-header-search-wrap,
+.ppw-row-title,
+.ppw-tool-btn-wrap,
+.ppw-breadcrumb-wrap,
+#mainnav,
+.ppw-aside,
+footer,
+.ppw-content-service-row ul,
+#left,
+#footer {
+     display: none;
+ }
+}

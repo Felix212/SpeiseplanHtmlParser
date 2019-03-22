@@ -1,0 +1,605 @@
+/*003366 2E5CB7 587DC5 B6C6E6 E0E7F4*/
+
+/* csander styles for extension "danp_pageredirect": Hinweis auf Startseite, wenn man kein Importierter User ist */
+.message_on_site { border: 1px solid red; background: #fff; margin-right:3px; margin-left:3px; padding:3px; }
+
+/* csander styles for extension "tipafriend" */
+.csander-tipafriend-url { margin: 4px 0 14px 0; line-height: 150%; }
+.csander-tipafriend-table { margin: 0 0 8px 0; }
+.csander-tipafriend-error { color: #f00; margin: 0 0 4px 0; }
+
+/* csander styles for extension "responsible" */
+.responsible { clear: both; margin: 16px 0; padding: 4px 0; border-top: 1px dotted #666; }
+
+/* csander styles for extension "danp_tagclouds" */
+div.tagcloud { background-color: #e0e7f4; padding: 7px; border: 1px solid #b6c6e6 }
+div.tagcloud a { color: #2e5cb7; text-decoration: none }
+
+/* csander styles for extension "bookmarks" */
+#perpage  { display: block; clear: both; margin: 0; height: 24px; }
+#perpage div,
+#perpage a { display: block; float: left; }
+#perpage div { margin: 0 6px 0 0; }
+#perpage a { padding: 0; margin: 0 6px 0 0; border-bottom: 1px solid #fff; }
+#perpage a.selected { border-bottom: 1px solid #587dc5; }
+#columns { clear: both; width: 100%; margin: 4px 0 6px 0; padding-bottom: 6px; border-top: 1px solid #999; border-bottom: 1px solid #999;  }
+#columns td { vertical-align: top; }
+#columns .col1 { }
+.pages { clear: both; margin: 6px 0; }
+.pages a { padding: 1px 2px; margin: 2px 0 0 0 !important; border: 1px solid #fff; }
+.pages a.selected { border: 1px solid #587dc5; }
+.flagged-news { clear: both; }
+
+.entry { clear: both; border-top: 1px dotted #666; margin: 4px 0 0 0; padding: 2px 0 0 0; }
+form.delete,
+.meta { float: left; margin: 0; }
+form.delete input { margin-right: 10px; }
+
+/* default styles for extension "tx_newloginbox_pi3" */
+	.tx-newloginbox-pi3-listrow TD { background-color:#eeeeee; padding-left: 3px; padding-right: 3px; }
+	.tx-newloginbox-pi3-listrow TR.tx-newloginbox-pi3-listrow-header TD { background-color:#B6C6E6 ; }
+	.tx-newloginbox-pi3-listrow TR.tx-newloginbox-pi3-listrow-header TD P { font-weight:bold; }
+	.tx-newloginbox-pi3-listrow TR.tx-newloginbox-pi3-listrow-odd TD { background-color:#E0E7F4; }
+/* default styles for extension "tx_veguestbook_pi1" */
+  /* example styles */
+    .tx-guestbook-list-header { background-color: #003366; color: #FFFFFF; font-weight:bold; }
+    .tx-guestbook-list-row { background-color: #FFFFFF; }
+    .tx-guestbook-list-rowleft { background-color: #E0E7F4; }
+    .tx-guestbook-list-entrycomment-title {font-weight: bold; }
+    .tx-guestbook-list-entrycomment { font-style: italic; }
+    .tx-guestbook-list-small {  color: #666666; }
+    .tx-veguestbook-pi1-browsebox TD {  color: #666666; }
+    .tx-veguestbook-pi1-browsebox-strong, .tx-ttnews-browsebox-SCell { font-weight: bold; }
+    .tx-veguestbook-pi1-browsebox-SCell { background-color: #E0E7F4; }
+    .tx-guestbook-latest-header { background-color: #539521; color: #FFFFFF; font-weight:bold; }
+    .tx-guestbook-latest-row { background-color: #FFFFFF; }
+    .tx-guestbook-latest-small {color: #B6C6E6; }
+ .tx-veguestbook-pi1 .formlabelcell {font-weight: bold; color: #003366}
+    .tx-guestbook-form-inputfield-med { width:100px; }
+    .tx-guestbook-form-inputfield-big {  width:150px; }
+    .tx-guestbook-form-textarea { color:#333333; width:250px; }
+    .tx-guestbook-form-obligationfield { color: #CC0000; }
+    .tx-guestbook-form-error { color: #CC0000; }
+/* default styles for extension "tx_loginboxmacmade_pi1" */
+		.tx-loginboxmacmade-pi1 .tx-loginboxmacmade-pi1-error {
+			color: #FF0000;
+		}
+		.tx-loginboxmacmade-pi1 TABLE.tx-loginboxmacmade-pi1-loginTable {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			border: solid 1px #587DC5 ;
+			border-collapse: collapse;
+		}
+		.tx-loginboxmacmade-pi1 TABLE.tx-loginboxmacmade-pi1-loginTable TD {
+			border: solid 1px #B6C6E6  ;
+			background-color: #E0E7F4;
+			padding: 5px;
+		}
+		.tx-loginboxmacmade-pi1 TABLE.tx-loginboxmacmade-pi1-loginTable TD.tx-loginboxmacmade-pi1-labelCell {
+			border: solid 1px #587DC5;
+			background-color: #B6C6E6;
+			font-weight: bold;
+		}
+
+/* Dokumentdirs */
+
+.tx-danpdocumentdirs-pi2 a {background-image: none; padding:0px;}
+
+.tx-danpdocumentdirs-pi2-listrow1 {
+font-size: 11px;
+ color: #000000;
+ background-color: #FFFFFF;
+}
+.tx-danpdocumentdirs-pi2-headers {
+font-size: 12px;
+font-weight: 500;
+ background-color: #2E5CB7 ;
+}
+.tx-danpdocumentdirs-pi2-headers  a, .tx-danpdocumentdirs-pi2-headers  a:visited {  color: #ffffff;  }
+
+.tx-danpdocumentdirs-pi2-headers td{
+padding: 5px;
+
+}
+.tx-danpdocumentdirs-pi2-listrow2 {
+font-size: 11px;
+ color: #000000;
+ background-color: #E0E7F4;
+ }
+.tx-danpdocumentdirs-pi2-list {
+   border: 1px solid #000; padding: 0px; margin-left: 0px; margin-right:20px; border-collapse: collapse; width: 100%;
+}
+#center2 .tx-danpdocumentdirs-pi2-list {width: 790px}
+.tx-danpdocumentdirs-pi2-list td {
+    padding: 3px; padding-left: 5px; padding-right: 5px; margin: 0px
+}
+.tx-danpdocumentdirs-pi2-modeSelector {
+   text-align: left;
+}
+
+.tx-danpdocumentdirs-pi2-modeSelector-table {
+ background-color: #003366;
+ border-width: 1px;
+ border-color: #000000;
+ margin: 3px;
+ border-style: solid;
+  border-collapse: collapse;
+}
+.tx-danpdocumentdirs-pi2-modeSelector-table a, .tx-danpdocumentdirs-pi2-modeSelector-table a:visited {color: #fff}
+.tx-danpdocumentdirs-pi2-modeSelector-table td{
+
+ border-width: 1px;
+ border-color: #000000;
+ padding: 3px; padding-left: 5px; padding-right: 5px;
+ border-style: solid;
+  border-collapse: collapse;
+}
+ .tx-danpdocumentdirs-pi2-modeSelector-SCell {
+ 	font-weight: 800;
+ }
+
+table.tx-danpdocumentdirs-pi2-dirmenu , table.tx-danpdocumentdirs-pi2-dirmenu table {border-collapse: collapse; margin: 0px}
+table.tx-danpdocumentdirs-pi2-dirmenu td, table.tx-danpdocumentdirs-pi2-dirmenu img {padding: 0px; margin: 0px; vertical-align: top}
+ .tx-danpdocumentdirs-pi2-dirmenuitem{
+ 	font-weight: 600;
+ 	font-size: 11px;
+ }
+table.tx-danpdocumentdirs-pi2-dirmenu {margin : 5px}
+
+
+ .tx-danpdocumentdirs-pi2-browsebox table{
+ background-color: #B6C6E6 ;
+ border-width: 1px;
+ border-color: #000000;
+ margin: 2px;
+margin-left: 0px;
+ border-style: solid;
+  border-collapse: collapse;
+ }
+.tx-danpdocumentdirs-pi2-browsebox a {  color: #000;  }
+
+.tx-danpdocumentdirs-pi2-browsebox-strong {
+ 	font-weight: 800;
+ }
+ .tx-danpdocumentdirs-pi2-browsebox td{
+ border-width: 1px;
+ border-color: #000000;
+ padding: 2px; padding-left: 5px; padding-right: 5px;
+ border-style: solid;
+ border-collapse: collapse;
+ font-size: 11px;
+}
+.tx-danpdocumentdirs-pi2-browsebox-SCell {
+ 	font-weight: 800;
+}
+
+/* MITARBEITWERLISTE*/
+
+.tx-vmmitarbeiterliste-pi1 td.label, .tx-vmmitarbeiterliste-pi1 div.label {font-size: 14px; color: #366F97; width: 100px; font-weight: bold; float: left; margin-top: 1px}
+.tx-vmmitarbeiterliste-pi1 td.searchinput {width: 300px}
+.tx-vmmitarbeiterliste-pi1 table, .tx-vmmitarbeiterliste-pi1 form {margin:0px; padding: 0px}
+.tx-vmmitarbeiterliste-pi1 .alphabetbox {margin-bottom: 8px;}
+.tx-vmmitarbeiterliste-pi1  .alphabetbox .alphabet { background-color: #B6C6E6 ; padding: 5px;  border: 1px solid #2E5CB7; font-size: 12px; font-weight: bold}
+.tx-vmmitarbeiterliste-pi1  .alphabetbox .alphabet a { color: #000; margin-left: 5px; margin-right: 5px; }
+.mitarbeitertabelle th {background-color: #B6C6E6;}
+.mitarbeitertabelle td {color: #003366 }
+input.searchinput {border: 1px solid #366F97; width: 212px}
+select.abteilungssearch {width: 300px}
+/* fix font-size */
+.mitarbeitertabelle TD, .mitarbeitertabelle th {font-size: 13px; padding:5px 10px;}
+/* for barrierefreiheit skaliere namensspalte mit schriftgroesse */
+.mitarbeitertabelle td.skaliere {font-size: 1em; padding:5px 10px;}
+.mitarbeitertabelle tr.row1 {background-color: #E0E7F4}
+.mitarbeiterInfoHead {
+    background:url(../IMG/userdetail-icon.png) 15px center no-repeat #003366;
+    color:#FFF;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:10px;
+    padding: 15px 0 15px 43px;
+    width:457px;
+}
+
+.mitarbeiterInfo label {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#000;
+	width:110px;
+	float:left;
+	margin:0;
+	padding:0;
+	margin-right:10px;
+	margin-left:10px;
+}
+
+.mitarbeiterInfo p {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	float: left;
+	width: 330px;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+}
+.mitarbeitertabelle a.fancybox {
+	background:url(../IMG/lupe.png) center top no-repeat;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.clear {
+	clear: both;
+}
+
+.moreData {
+	cursor: pointer;
+}
+
+.alleAngaben {
+	background:url(../IMG/tooltipp.png) center top no-repeat;
+	position:absolute;
+	height:100px;
+	padding-top:7px;
+	top:0px;
+	left:0px;
+	display:none;
+	z-index:9999;
+}
+
+.alleAngaben span {
+	background:#003366;
+	padding:10px 20px;
+	display:block;
+	border-radius:7px;
+	text-align:center;
+	font-weight:bold;
+	color:#FFF;
+}
+/* styles for extension "tx_tmlunchmenu_pi1" */
+.tx-tmlunchmenu-pi1 table.lunchweekbrowse {border: 1px solid #003366; width: 780px;  background:#E0E7F4;}
+
+
+.tx-tmlunchmenu-pi1 table.menuday {background:#003366;border:1px solid #003366; width: 780px}
+.tx-tmlunchmenu-pi1 table.menuday caption {color:#003366; font-weight:bold; text-align: left}
+.tx-tmlunchmenu-pi1 table.menuday a { }
+
+.tx-tmlunchmenu-pi1 table.menuday th{padding:1px;font-weight:bold;border:none; color: #fff; width: 33%}
+.tx-tmlunchmenu-pi1 table.menuday td{background:#E0E7F4; padding:10px; font-size: 14px}
+
+
+.tx-tmlunchmenu-pi1 table.menuweek {border:1px solid #133D8D; width: 780px}
+.tx-tmlunchmenu-pi1 table.menuweek caption{color:#003366; font-weight:bold; text-align:left;}
+.tx-tmlunchmenu-pi1 table.menuweek a{text-decoration:none;}
+.tx-tmlunchmenu-pi1 table.menuweek a:hover{text-decoration:underline;}
+.tx-tmlunchmenu-pi1 table.menuweek td{background:#E0E7F4; font-size: 13px; width:132px; vertical-align:top; padding-top:3px}
+.tx-tmlunchmenu-pi1 table.menuweek th{font-weight:bold;border:none; color: #fff; background:#003366;}
+.tx-tmlunchmenu-pi1 table.menuweek th a, .tx-tmlunchmenu-pi1 table.menuweek th a:visited {color: #fff; }
+.tx-tmlunchmenu-pi1 table.menuweek #mlcol{vertical-align: middle; width: 120px;background:none; border:none; font-weight: bold; white-space: nowrap}
+
+/* chatfenster */
+.tx-danparscchat-pi1 iframe {width: 750px; height: 500px; border: 1px solid #000}
+
+/* default styles for extension "tx_drwiki_pi1" */
+  .tx-drwiki-pi1 A { TEXT-DECORATION: none; }
+  .tx-drwiki-pi1 A:hover { TEXT-DECORATION: underline; }
+  .tx-drwiki-pi1 H1 { FONT-SIZE: 188%; FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; BORDER-BOTTOM: #aaaaaa 1px solid }
+  .tx-drwiki-pi1 H2 { FONT-SIZE: 150%; FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; BORDER-BOTTOM: #aaaaaa 1px solid }
+  .tx-drwiki-pi1 H3 { FONT-SIZE: 132%; FONT-WEIGHT: bold; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; }
+  .tx-drwiki-pi1 H4 { FONT-SIZE: 116%; FONT-WEIGHT: bold; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; }
+  .tx-drwiki-pi1 H5 { FONT-SIZE: 100%; FONT-WEIGHT: bold; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; }
+  .tx-drwiki-pi1 H6 { FONT-SIZE: 80%; FONT-WEIGHT: bold; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; }
+  .tx-drwiki-pi1 HR { height:1px; border-top:1px dotted #000000; border-left:0; border-right:0; border-bottom:0; }
+  .tx-drwiki-pi1 PRE { BORDER-RIGHT: #2f6fab 1px dashed; PADDING-RIGHT: 1em; BORDER-TOP: #2f6fab 1px dashed; PADDING-LEFT: 1em; PADDING-BOTTOM: 1em; BORDER-LEFT: #2f6fab 1px dashed; COLOR: black; LINE-HEIGHT: 1.1em; PADDING-TOP: 1em; BORDER-BOTTOM: #2f6fab 1px dashed; BACKGROUND-COLOR: #f9f9f9 }
+  .tx-drwiki-pi1 INPUT {font-size:10pt;}
+  .tx-drwiki-pi1 TEXTAREA {width:100%; font-size:10pt;}
+  .tx-drwiki-pi1-urlextension { display: none; }
+  #toc {BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 10pt; PADDING-BOTTOM: 5px; BORDER-LEFT: #aaaaaa 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #aaaaaa 1px solid; BACKGROUND-COLOR: #f9f9f9 }
+  #toc .tocindent {MARGIN-LEFT: 2em}
+  #toc .tocline {MARGIN-BOTTOM: 0px}
+  #toc P {FONT-SIZE: 10pt; MARGIN: 0px}
+  #toc .toctoggle {FONT-SIZE: 10pt}
+  #toc .editsection {MARGIN-TOP: 0.7em; FONT-SIZE: 10pt}
+
+
+/* default styles for extension "tx_croncssstyledimgtext" */
+
+
+/* Captions */
+P.csc-caption { margin: 0; }
+P.csc-caption {
+  font-size: 80%; /* Customize me */
+}
+DIV.csi-caption-c .csi-caption { text-align: center; }
+DIV.csi-caption-r .csi-caption { text-align: right; }
+DIV.csi-caption-l .csi-caption { text-align: left; }
+
+/* Needed for noRows setting */
+DIV.csi-textpic DIV.csi-imagecolumn { float: left; display: inline; }
+
+/* Border just around the image */
+DIV.csi-border DIV.csi-imagewrap .csi-image IMG {
+  border: 1px solid black;
+  padding: 0px 0px;
+}
+
+DIV.csi-imagewrap { padding: 0; }
+
+DIV.csi-textpic IMG { border: none; }
+
+/* DIV: This will place the images side by side */
+DIV.csi-textpic DIV.csi-imagewrap DIV.csi-image { float: left; }
+
+/* UL: This will place the images side by side */
+DIV.csi-textpic DIV.csi-imagewrap UL { list-style: none; margin: 0; padding: 0; }
+DIV.csi-textpic DIV.csi-imagewrap UL LI { float: left; margin: 0; padding: 0; }
+
+/* DL: This will place the images side by side */
+DIV.csi-textpic DIV.csi-imagewrap DL.csi-image { float: left; }
+DIV.csi-textpic DIV.csi-imagewrap DL.csi-image DT { float: none; }
+DIV.csi-textpic DIV.csi-imagewrap DL.csi-image DD { float: none; }
+DIV.csi-textpic DIV.csi-imagewrap DL.csi-image DD IMG { border: none; } /* FE-Editing Icons */
+DL.csi-image { margin: 0; }
+DL.csi-image DT { margin: 0; display: inline; }
+DL.csi-image DD { margin: 0; }
+
+/* Clearer */
+DIV.csi-clear { clear: both; }
+
+/* Margins around images: */
+
+/* Pictures on left, add padding on right */
+DIV.csi-left DIV.csi-imagewrap .csi-image,
+DIV.csi-intext-left-nowrap DIV.csi-imagewrap .csi-image,
+DIV.csi-intext-left DIV.csi-imagewrap .csi-image {
+  display: inline; /* IE fix for double-margin bug */
+  margin-right: 10px;
+
+}
+
+/* Pictures on right, add padding on left */
+DIV.csi-right DIV.csi-imagewrap .csi-image,
+DIV.csi-intext-right-nowrap DIV.csi-imagewrap .csi-image,
+DIV.csi-intext-right DIV.csi-imagewrap .csi-image {
+  display: inline; /* IE fix for double-margin bug */
+  margin-left: 10px;
+}
+
+/* Pictures centered, add padding left and right */
+DIV.csi-center DIV.csi-imagewrap .csi-image {
+  display: inline; /* IE fix for double-margin bug */
+  margin-left: 5px;
+  margin-right: 5px;
+}
+DIV.csi-textpic DIV.csi-imagewrap .csi-image .csi-caption { margin: 0; }
+DIV.csi-textpic DIV.csi-imagewrap .csi-image IMG { margin: 0; }
+
+/* Space below each image (also in-between rows) */
+DIV.csi-textpic DIV.csi-imagewrap .csi-image { margin-bottom: 5px; }
+DIV.csi-equalheight DIV.csi-imagerow { margin-bottom: 5px; display: block; }
+
+/* Positioning of images: */
+
+/* Above */
+DIV.csi-above DIV.csi-text { clear: both; }
+
+/* Center (above or below) */
+DIV.csi-center { text-align: center; /* IE-hack */ }
+DIV.csi-center DIV.csi-imagewrap { margin: 0 auto; }
+DIV.csi-center DIV.csi-imagewrap .csi-image { text-align: left; /* Remove IE-hack */ }
+DIV.csi-center DIV.csi-text { text-align: left; /* Remove IE-hack */ }
+
+/* Right (above or below) */
+DIV.csi-right DIV.csi-imagewrap { float: right; }
+DIV.csi-right DIV.csi-text { clear: right; }
+
+/* Left (above or below) */
+DIV.csi-left DIV.csi-imagewrap { float: left; }
+
+/* Left (in text) */
+DIV.csi-intext-left DIV.csi-imagewrap { float: left; clear: both;}
+
+/* Right (in text) */
+DIV.csi-intext-right DIV.csi-imagewrap { float: right; }
+
+/* Right (in text, no wrap around) */
+DIV.csi-intext-right-nowrap DIV.csi-imagewrap { float: right; clear: both; }
+/* Hide from IE5-mac. Only IE-win sees this. \*/
+* html DIV.csi-intext-right-nowrap .csi-text { height: 1%; }
+/* End hide from IE5/mac */
+
+/* margin for the topaligened (danp) */
+div.csi-intext-right-nowrap {margin-top: 20px}
+
+/* Left (in text, no wrap around) */
+DIV.csi-intext-left-nowrap DIV.csi-imagewrap { float: left; clear: both; }
+/* Hide from IE5-mac. Only IE-win sees this. \*/
+* html DIV.csi-intext-left-nowrap .csi-text { height: 1%; }
+/* End hide from IE5/mac */
+	-->
+		/*]]>*/
+
+/* default styles for extension "tx_indexedsearch" */
+.tx-indexedsearch-rules H2 {
+	color:#00407B;
+	font-size:1.05em;
+	margin-bottom:5px;
+	margin-top:0px;
+
+}
+.tx-indexedsearch-rules {margin-top: 15px}
+	.tx-indexedsearch .tx-indexedsearch-searchbox INPUT.tx-indexedsearch-searchbox-button { width:100px; }
+	.tx-indexedsearch .tx-indexedsearch-searchbox INPUT.tx-indexedsearch-searchbox-sword { width:150px; }
+	.tx-indexedsearch .tx-indexedsearch-whatis P .tx-indexedsearch-sw { font-weight:bold; font-style:italic; }
+	.tx-indexedsearch .tx-indexedsearch-whatis { margin-top:10px; margin-bottom:5px; }
+	.tx-indexedsearch P.tx-indexedsearch-noresults { text-align:center; font-weight:bold; }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-title { background:#B6C6E6; }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-title P { font-weight:bold; }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-title P.tx-indexedsearch-percent { font-weight:normal; }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-descr P { font-style:italic; }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-descr P .tx-indexedsearch-redMarkup { color:red; }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-info { background:#E0E7F4; }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead { margin-top:20px; margin-bottom:5px; }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead H2 { margin:0px; padding-top:1px; padding-left: 2px; padding-bottom:1px; margin-bottom:1px; font-size: 1em; color:#fff }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead H2 a { color:#fff }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead H2 a:visited { color:#fff }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead TABLE { background:#003366; }
+	.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead TD { vertical-align:middle; }
+	.tx-indexedsearch .tx-indexedsearch-res .noResume { color : #B6C6E6; }
+
+//alte Einstellung fuer Resultate (Breite)
+
+.tx-indexedsearch-info a {font-size: 0.8em}
+
+
+/*Info in suchergebnis entfernen*/
+.tx-indexedsearch-info {
+display: none;
+}
+.tx-indexedsearch-res {width: 760px; }
+/* update auf typo3 4.1.2 - indexed_search */
+ul.browsebox {margin: 5px 0 5px 2px; padding: 0}
+ul.browsebox li {display: inline; margin-right: 5px}
+
+/* Sitemap anpassen */
+.csc-sitemap-level1 {font-weight: bold; margin-top: 5px}
+.csc-sitemap-level2 {margin-left: 20px}
+.csc-sitemap-level3 {margin-left: 40px; font-size: 0.9em}
+.csc-sitemap-level4 {margin-left: 55px; font-size: 0.8em}
+
+/* Seitenindex */
+.tx-danpindexviews-pi1-item { padding-left: 10px}
+.tx-danpindexviews-pi1-letter {font-weight: bold; margin-top: 10px}
+
+
+
+/* RSS TW Styles */
+/* default styles for extension "tx_twrssfeeds_pi1" */
+
+#twrss_table {
+/*width:200px;*/
+	font-size: 12px;
+	color: #666666;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: normal;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right:10px;
+	line-height: 16px;
+}
+
+.twrss_head{
+	font-size: 12px;
+	color: #666666;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right:10px;
+	line-height: 16px;
+}
+
+.twrss_head_channel{
+	font-size: 12px;
+	color: #666666;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right:10px;
+	line-height: 16px;
+}
+
+.twrss_bodytext{
+	font-size: 12px;
+	color: #666666;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: normal;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right:10px;
+	line-height: 16px;
+}
+
+.twrss_bodytext A{
+	font-size: 12px;
+	color: #666666;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 16px;
+        text-decoration:underline;
+}
+
+.twrss_bodytext A:hover{
+	font-size: 12px;
+	color: #666666;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 16px;
+        text-decoration:underline;
+}
+
+
+
+
+/*new  pinboard fsc_pinboard styles */
+	.tx-fscpinboard-pi1 div.bluebox {background-color: #E0E7F4; padding: 5px 5px 10px 5px}
+.tx-fscpinboard-pi1 p {word-break: break-all;}
+.tx-fscpinboard-pi1 div.bluebox p {padding: 4px 0 4px 0; margin: 4px 0 4px 0}
+
+
+	.tx-fscpinboard-pi1 table.form {margin-right: 2px}
+		.tx-fscpinboard-pi1 table.form td {padding: 2px 9px 2px 0; vertical-align: top}
+		.tx-fscpinboard-pi1 table.form .input-file {width: 300px}
+		.tx-fscpinboard-pi1 table.form .rlabel {padding-top: 5px; font-weight: bold; color: #003366}
+		.tx-fscpinboard-pi1 .defaultwidth {width: 200px}
+		.tx-fscpinboard-pi1 table.form textarea {width: 230px; height: 150px}
+
+	.tx-fscpinboard-pi1 .resulttable {margin-top: 10px; width: 100%}
+		.tx-fscpinboard-pi1 .resulttable .pinboarditem1 {background-color: #E0E7F4}
+		.tx-fscpinboard-pi1 .resulttable td {color: #003366; padding: 3px 8px 5px 3px; vertical-align: top}
+		.tx-fscpinboard-pi1 .resulttable h5 {margin:0; padding: 0; font-weight: bold; color: #003366; font-size: 15px}
+		.tx-fscpinboard-pi1 .resulttable .timeinfo {font-weight: bold; color: #2E5CB7; font-size: 14px}
+
+	.tx-fscpinboard-pi1 a.pagenavi_selected, .tx-fscpinboard-pi1 a.pagenavi {background-image: none; padding: 0 2px 0 0; margin-top: 3px}
+
+	.tx-fscpinboard-pi1 .extrainfos {margin-bottom: 5px; font-weight: bold}
+	.tx-fscpinboard-pi1 .extrainfos .box  {width: 200px; float: left}
+	.tx-fscpinboard-pi1  .cc {clear: both}
+
+/* styles for felists */
+.felists .pagebrowser {margin: 5px 0 5px 0}
+
+.felists .tx-felists-pi1-preview-label {font-weight: bold}
+
+.felists .tx-felists-pi1-link-delete-preview {margin: 2px 0 3px 0}
+	.felists .delete-yes a {color: darkred; font-weight: bold}
+	.felists .delete-no  {}
+
+.felists .resulttable table {margin: 5px 0 5px 0; width: 100%; border: 1px solid #003366; border-collapse: collapse }
+	.felists .resulttable table th {padding: 3px 8px 5px 3px; text-align: left; background-color: #003366; color: #fff}
+	.felists .resulttable table th a {color: #fff}
+	.felists .resulttable table td {padding: 3px 8px 5px 3px; vertical-align: top; border: 1px solid #B6C6E6;}
+	.felists .resulttable table tr.white {background-color: #E0E7F4}
+/* scrollbars */
+.csc-frame-frame2 .resulttable {width: 770px; border: 1px solid #2E5CB7;overflow-x: scroll; padding: 3px}
+.csc-frame-rulerAfter1 {visibility:hidden;}
+
+/* rechte spalte dokextension */
+#right tr.tx-danpdocumentdirs-pi2-headers {background-color: #003366}
+#right .tx-danpdocumentdirs-pi2 table { margin: 0}
+#right .tx-danpdocumentdirs-pi2 .tx-danpdocumentdirs-pi2-listrow {margin: 0; padding:0}
+
+/* float problem nach update auf 4.1.2 */
+//DIV.csc-textpic-text {clear: both}

@@ -1,0 +1,18 @@
+/*boxcontent -> float left, fixed width */
+
+#center .boxcontent {width: 188px; margin: 5px 8px 5px 0; padding: 0px; }
+
+	#center  .boxcontent h2, #center  .boxcontent h3, #center  .boxcontent .boxtext { padding: 0 5px 0 5px; margin: 0px}
+	#center  .boxcontent h2 {height: 16px; background-color: #003366; color: #fff; font-size: 1em; font-weight: normal}
+	#center  .boxcontent h2 a {color: #fff}
+	#center  .boxcontent h3 {font-size: 0.9em; font-weight: bold; background-color: #E0E7F4;}
+	#center  .boxcontent .boxtext {font-size: 0.9em; margin-bottom: 5px; background-color: #E0E7F4; height: 58px;}
+	#center  .boxcontent .boxtext a {color: #000; background: none}
+	
+
+/*wrapperbox to make 3 cols: */
+	#center .wrapperbox {clear: both; margin: 0px; padding: 0px}
+	#center .wrapperbox .col1, #center .wrapperbox .col2, #center .wrapperbox .col3 {float:left; }	
+	#center .wrapperbox .col3 {float: left; width: 188px}
+	/*#center .wrapperbox .col3 {float: right; width: 3px}*/
+	#center .wrapperbox .col3 .boxcontent {margin-right: 0px; float:right}

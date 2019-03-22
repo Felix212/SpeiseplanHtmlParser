@@ -1,0 +1,189 @@
+
+.table_input_kalender{
+	margin:0;
+	padding:0;
+	border-collapse:collapse;
+}
+
+.div_kalender{
+	position: absolute;
+	margin:0 0 0 -18;
+	width:240px;
+	visibility:hidden;
+	/*visibility:visible;*/
+	z-index:9999;
+}
+.table_kalender{
+	width:100%;
+	margin:18 0 0 0;
+	text-align:center;
+	border:1px solid #ccc;
+	border-spacing:2px;
+    table-layout:fixed;
+    border-collapse:separate;
+	background:#fff url(/typo3conf/ext/ppw_pinboard/res/calendar/gradient-e5e5e5-ffffff.gif) repeat-x 0 -20px;
+    font-family:verdana,arial,sans-serif;
+}
+.td_woche{
+	font-size:12px;
+	font-weight:bold;
+	color:#000;
+	vertical-align: middle;
+}
+.td_wocheende{
+	font-size:12px;
+	font-weight:bold;
+	color:#AA4444;
+	vertical-align: middle;
+}
+
+.td_unselected{
+	padding:0;
+    text-align:center;
+	border:1px solid #ccc;
+	background:#fff url(/typo3conf/ext/ppw_pinboard/res/calendar/gradient-e5e5e5-ffffff.gif) repeat-x 0 -40px;
+    cursor:pointer;
+    width:3em;
+    height:31px !important;
+    height:31px;
+    outline:none;
+    font-size:10px;
+    font-weight:bold;
+    color:#444444;
+    vertical-align: middle;
+}
+
+.td_selected{
+	padding:0;
+    text-align:center;
+	border:1px solid #000;
+	background:#fff url(/typo3conf/ext/ppw_pinboard/res/calendar/gradient-e5e5e5-ffffff.gif) repeat-x 0 -40px;
+    cursor:pointer;
+    width:3em;
+    height:31px !important;
+    height:31px;
+    outline:none;
+    font-size:10px;
+    font-weight:bold;
+    color:#444444;
+    vertical-align: middle;
+}
+
+.td_today_selected{
+	padding:0;
+    text-align:center;
+	border:1px solid #000;
+	background:#fff url(/typo3conf/ext/ppw_pinboard/res/calendar/today.gif) no-repeat 0 0px;
+    cursor:pointer;
+    width:3em;
+    height:31px !important;
+    height:31px;
+    outline:none;
+    font-size:10px;
+    font-weight:bold;
+    color:#444444;
+    vertical-align: middle;
+}
+
+.td_today_unselected{
+	padding:0;
+    text-align:center;
+	border:1px solid #ccc;
+	background:#fff url(/typo3conf/ext/ppw_pinboard/res/calendar/today.gif) no-repeat 0 0px;
+    cursor:pointer;
+    width:3em;
+    height:31px !important;
+    height:31px;
+    outline:none;
+    font-size:10px;
+    font-weight:bold;
+    color:#444444;
+    vertical-align: middle;
+}
+
+.td_nodate{
+	padding:0;
+    text-align:center;
+	border:1px solid #ccc;
+	background:#fff url(/typo3conf/ext/ppw_pinboard/res/calendar/bg_nodate.gif);
+    cursor:default;
+    width:3em;
+    height:31px !important;
+    height:31px;
+    outline:none;
+    font-size:10px;
+    font-weight:bold;
+    color:#444444;
+    vertical-align: middle;
+}
+
+
+a.prev_next:link,
+a.prev_next:visited,
+a.prev_next:active,
+a.prev_next:focus{
+	cursor:pointer;
+	text-decoration:none;
+	vertical-align:top;
+	font-family:verdana,arial,sans-serif;
+	font-size:18px;
+    font-weight:bold;
+    color:#444444;
+}
+a.prev_next:hover{
+	cursor:pointer;
+	text-decoration:none;
+	vertical-align:top;
+	font-family:verdana,arial,sans-serif;
+	font-size:18px;
+    font-weight:bold;
+    color:#AA4444;
+}
+
+a.lnk_heute:link,
+a.lnk_heute:visited,
+a.lnk_heute:active,
+a.lnk_heute:focus{
+	cursor:pointer;
+	text-decoration:none;
+	vertical-align:middle;
+	font-family:verdana,arial,sans-serif;
+	font-size:12px;
+    font-weight:bold;
+    color:#666;
+}
+a.lnk_heute:hover{
+	cursor:pointer;
+	text-decoration:none;
+	vertical-align:middle;
+	font-family:verdana,arial,sans-serif;
+	font-size:12px;
+    font-weight:bold;
+    color:#AA4444;
+}
+
+.err_kalender{
+	display:block;
+	font-family:verdana,arial,sans-serif;
+	font-size:12px;
+    font-weight:normal;
+    color:#AA4444;
+}
+.noerr_kalender{
+	display:none;
+}
+
+/* INPUT FELD für DATE */
+input.date_ddmmyyyy_IE{
+	border: 1px solid #CCC;
+	width: 71px;
+	height: 18px;
+	padding: 0px 0px 0px 3px;
+}
+
+input.date_ddmmyyyy{
+	border: 1px solid #CCC;
+	width: 71px;
+	height: 18px;
+	padding: 0px 0px 0px 3px;
+}

@@ -1,0 +1,333 @@
+#ppw-link {
+	color: #fff;
+}
+
+#ppw-pageheader {
+	color:#FFF;
+	background:#6699CC;
+	padding:7px;	
+	width:99%;
+}
+
+#ppw-dayNav-bottom {
+	border:1px solid #CCC;
+}
+
+
+#ppw-dayNav-top {
+	border:1px solid #CCC;
+}
+
+#ppw-languageChange {
+	padding-left:20%;
+}
+
+#ppw-languageChangeWeek {
+	padding-left:8%;
+}
+
+
+#ppw-languageChange a {
+	color:#FFF;
+	text-decoration:underline;
+}
+
+#ppw-languageChange a:hover {
+	text-decoration:none;
+}
+
+#ppw-languageChangeWeek a {
+	color:#FFF;
+	text-decoration:underline;
+}
+
+#ppw-languageChangeWeek a:hover {
+	text-decoration:none;
+}
+
+#ppw-form {
+	padding:10px;
+}
+
+.ppw-input {
+	margin-left:10px;
+	border:1px solid #CCC;
+}
+
+.ppw-button {
+	background:#ECE9D8;
+	border:1px solid #CCC;
+	margin:0;
+}
+
+.ppw-label {
+	padding-right:20px;
+}
+
+.ppw-foodImage {
+	
+}
+
+
+th.ppw-weekTableHeader {
+	background:#6699CC;
+	color:#FFF;
+}
+
+td.ppw-weekTableMenu {
+	background:#6699CC;
+	color:#FFF;
+}
+
+#ppw-pdfpage {
+	width:100% !important;
+}
+
+
+#ppw-pdfNotice {
+	font-size:20px;
+}
+
+
+#ppw-farbe {
+color: #00326b;
+}
+
+
+#ppw-schrift {
+	font-family:  Verdana,Helvetica,sans-serif;
+}
+
+th.ppw-speiseplan {
+	line-height:16px;
+	background-color: #003366;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	padding: 5px 3px 8px 3px;
+}
+
+th.ppw-speiseplan-kopf {
+	line-height:16px;
+	background-color: #003366;
+	font-size: 14px;
+	color: #fff;
+	text-align: left;
+	padding: 0px 0px 0px 8px;
+}
+
+th.ppw-speiseplan-kopf-rechts {
+	line-height:16px;
+	background-color: #003366;
+	font-size: 14px;
+	color: #fff;
+	text-align: right;
+	padding: 0px 8px 0px 0px;
+}
+
+th.ppw-speiseplan-woche {
+	line-height:18px;
+	font-size: 14px;
+	color: #000;
+	text-align: center;
+	padding: 3px 0px 3px 0px;
+	border-top: solid 0px #003366;
+	border-right: solid 0px #003366;
+	border-bottom: solid 2px #003366;
+	border-left: solid 0px #003366;
+
+	
+	vertical-align: text-top;
+}
+
+th.ppw-speiseplan-funktionen {
+	line-height:16px;
+	background-color: #003366;
+	font-size: 14px;
+	color: #fff;
+	text-align: left;
+	padding: 8px 3px 7px 3px;
+	font-weight: normal;
+}
+
+th.ppw-speiseplan-funktionen-rechts {
+	line-height:16px;
+	background-color: #003366;
+	font-size: 14px;
+	color: #fff;
+	text-align: right;
+	padding: 8px 3px 7px 3px;
+	font-weight: normal;
+}
+
+th.ppw-speiseplan-kalender {
+	line-height:16px;
+	background-color: #003366;
+	font-size: 14px;
+	text-align: center;
+	padding: 0px 3px 0px 3px;
+}
+
+th.ppw-speiseplan-funktionen a:link, a:active {
+	color: #fff;
+	text-decoration:none;
+	font-size:13px;
+}
+
+th.ppw-speiseplan-funktionen a:hover, a:focus {
+	text-decoration:underline;
+}
+
+th.ppw-speiseplan-funktionen-rechts a:link, a:active, a:visited {
+	color: #fff;
+	text-decoration:none;
+	font-size:13px;
+}
+
+th.ppw-speiseplan-funktionen-rechts a:hover, a:focus {
+	text-decoration:underline;
+}
+
+
+td.ppw-speiseplan-aussen {
+	border: solid 1px #003366;
+}
+
+td.ppw-speiseplan-aussen-woche {
+	border: solid 2px #003366;
+}
+
+
+td.ppw-speiseplan {
+	line-height:34px;
+	font-size: 14px;
+	color: #000;
+	text-align: center;
+	padding: 10px 3px 14px 3px;
+	border: solid 1px #003366;
+	vertical-align: text-top;
+}
+
+td.ppw-speiseplan-woche {
+	line-height:14px;
+	font-size: 12px;
+	color: #000;
+	text-align: center;
+	padding: 15px 0px 10px 0px;
+}
+
+td.ppw-speiseplan-woche-menue {
+	line-height:20px;
+	font-size: 14px;
+	color: #003366;
+	text-align: center;
+	padding: 30px 3px 14px 3px;
+	border-top: solid 0px #003366;
+	border-right: solid 2px #003366;
+	border-botton: solid 0px #003366;
+	border-left: solid 0px #003366;
+	vertical-align: text-top;
+	font-weight:bold;
+}
+
+.ppw-speiseplan-text {
+	line-height:13px;
+	font-size: 12px;
+	color: #000;
+	text-align: center;
+	padding: 12px 12px 3px 12px;
+}
+
+.ppw-speiseplan-text-woche {
+	line-height:12px;
+	font-size: 10px;
+	color: #000;
+	text-align: center;
+}
+
+th.ppw-speiseplan-links {
+background-image:url(images/rundung_links.gif);
+width:20px;
+}
+
+th.ppw-speiseplan-rechts {
+background-image:url(images/rundung_rechts.gif);
+width:20px;
+background-position:right;
+}
+
+.ppw-speiseplan-linie {
+height:1px;
+line-height:1px;
+font-size:1px;
+}
+
+
+#ppw-pdfpage table {
+	width: 100% !important;
+	margin-bottom: 2em;
+	
+	font-size:0.8em;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+#ppw-pdfpage tr td {
+	width: 100% !important;
+	padding: 0.2em 0.6em;
+	padding: 10px;
+}
+
+#ppw-pdfpage tr th {
+	width:10% !important;
+	background-color: #ccc;
+	text-align: left;
+	padding: 0.2em 0.6em !important;
+}
+
+#ppw-pdfpage table.header {
+	
+	margin-bottom: 3em;
+}
+
+#ppw-pdfpage table.header td {
+	
+}
+
+#ppw-pdfpage table.footer {
+	
+	margin-top: 3em;
+}
+
+#ppw-pdfpage table.footer td {
+	
+	padding-top: 1.5em;
+	
+	font-size: 0.8em;
+}
+
+#ppw-pdfpage td.right-align {
+	text-align: right;
+}
+
+
+
+#ppw-pdfpage td.spacer {
+	height: 1.0em;
+	width:10% !important;
+}
+
+#ppw-pdfpage td.icon {
+	text-align: center;
+	vertical-align: top;
+	padding-top: 0.4em;
+}
+
+#ppw-pdfpage td.price {
+	font-weight: bold;
+	width: 5em;
+}
+
+#ppw-pdfpage p#subline {
+	text-align: center;
+	font-weight:bold;
+}
