@@ -1,4 +1,5 @@
 package htmlparser;
+import java.io.File;
 import java.io.IOException;
 import java.time.DayOfWeek;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import com.google.gson.*;
 import com.mashape.unirest.http.HttpResponse;
@@ -33,12 +35,11 @@ public class Parser {
 	private int gourmetMenue = 10;
 	private int menueBase = 6;
 	JsonObject Speiseplan = new JsonObject();
-	JsonArray Monday = new JsonArray();
-	JsonArray Tuesday = new JsonArray();
-	JsonArray Wednesday = new JsonArray();
-	JsonArray Thursday = new JsonArray();
-	JsonArray Friday = new JsonArray();
-
+	public Parser(File in) throws IOException
+	{
+		doc = Jsoup.parse(in, "UTF-8");
+		elementWeek = doc.getElementsByClass("ppw-speiseplan-aussen-woche");
+	}
 	public Parser() throws IOException, UnirestException
 	{
 		//WeekParser
@@ -47,7 +48,7 @@ public class Parser {
 				.basicAuth("_ADPassword", "_ADPassword2016")
 				.asString();
 		doc = Jsoup.parse(htmlWeek.getBody());
-		elementWeek = doc.getElementsByClass("ppw-speiseplan-woche");
+		elementWeek = doc.getElementsByClass("ppw-speiseplan-aussen-woche");
 		//DayParser
 		HttpResponse<String> htmlDay = Unirest.get("http://intranet.dw.com/top-menu/speiseplan/speiseplan-bonn/tagesansicht.html").header("Content-Type",
 				"application/json")
@@ -78,163 +79,60 @@ public class Parser {
 	public POJO_Week.Plan getWeek() throws IOException
 	{
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        //gson.toJson()
-        System.out.println(gson.toJson(createWeekJSONObject()));
-        return gson.fromJson(createWeekJSONObject(), POJO_Week.Plan.class);
+        
+        return null;
 	}
-	private JsonObject getFood(DayOfWeek day)
-	{
-		int feiertage = checkWeek();
-		if(feiertage!= 0)
-		{
-			
-		}
-		JsonObject data = new JsonObject();
-		Matcher m;
-		//Funk
-		
-		m = p.matcher(elementWeek.get(((menueBase)+(day.getValue()-1)+proFunkMenue)).getElementsByTag("div").text());
-		m.find();
-		data.addProperty("FunkBeschreibung" , m.group(1));
-		data.addProperty("FunkPreis",m.group(3));
-		
-		//Lunch
-		
-		m = p.matcher(elementWeek.get(((menueBase)+(day.getValue()-1)+lunchMenue)).getElementsByTag("div").text());
-		m.find();
-		data.addProperty("LunchBeschreibung" ,m.group(1));
-		data.addProperty("LunchPreis",m.group(3));
-
-		//Gourmet
-		
-		m = p.matcher(elementWeek.get(((menueBase)+(day.getValue()-1)+gourmetMenue)).getElementsByTag("div").text());
-		m.find();
-		data.addProperty("GourmetBeschreibung",m.group(1));
-		data.addProperty("GourmetPreis",m.group(3));
-		
-		return data;
-		
-	}
-	private int checkWeek()
-	{
-		Matcher m;
-		int tage = 0;
-		for (int i = 0; i < 5; i++) {
-			m = p.matcher(elementWeek.get((menueBase)+i).getElementsByTag("div").text());
-			if(!m.matches())
-			{
-				tage++;
-			}
-		}
-		return tage;
-	}
-	public void getMeal()
+	public JsonObject getWeekFood()
 	{
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		Matcher m;
-		ArrayList<Integer> tage = new ArrayList<>();
-		int offset = 0;
-		for (int i = 0; i < 5; i++) {
-			JsonObject Data = new JsonObject();
-			m = p.matcher(elementWeek.get((menueBase)+i).getElementsByTag("div").text());
-			if(!m.matches())
-			{
-				Data.addProperty("FunkBeschreibung", "Feiertag");
-				addToTag(i, Data);
-				tage.add(i);
-				offset++;
-			}
-			else
-			{
-				Data.addProperty("FunkBeschreibung", m.group(1));
-				Data.addProperty("FunkPreis", m.group(3));
-				addToTag(i, Data);
-				
-			}
-		}
-		for (int i = 0; i < 5-offset; i++) {
-			JsonObject Data = new JsonObject();
-			boolean nachFeiertag = false;
-			m = p.matcher(elementWeek.get((menueBase)+i+lunchMenue-offset+1).getElementsByTag("div").text());
-			if(nachFeiertag && !tage.contains(i))
-			{
-				Data.addProperty("LunchBeschreibung", m.group(1));
-				Data.addProperty("LunchPreis", m.group(3));
-				addToTag(i+1, Data);
-			}
-			if(tage.contains(i))
-			{
-				nachFeiertag = true;
-				Data.addProperty("LunchBeschreibung", m.group(1));
-				Data.addProperty("LunchPreis", m.group(3));
-				addToTag(i+1, Data);
-				;
-			}
-			else
-			{
+		Element table = elementWeek.select("table").get(0);
+		Elements rows = table.select("tr");
+		Matcher m;	
+		for (int i = 1; i < 6; i++) {
+			JsonObject data = new JsonObject();
+			
+			for (int j = 1; j < rows.size(); j++) {
+				Element row = rows.get(j);
+				Elements cols = row.select("td");
+				cols.get(i);
+				m = p.matcher(cols.get(i).text());
 				m.find();
-				Data.addProperty("LunchBeschreibung", m.group(1));
-				Data.addProperty("LunchPreis", m.group(3));
-				addToTag(i, Data);
+				data.addProperty(getMenueName(j)+"Beschreibung", m.group(1));
+				data.addProperty(getMenueName(j)+"Preis", m.group(3));
 			}
+			addToTag(i, data);	
 		}
-		for (int i = 0; i < 5-offset; i++) {
-			JsonObject Data = new JsonObject();
-			boolean nachFeiertag = false;
-			m = p.matcher(elementWeek.get((menueBase)+i+gourmetMenue-offset).getElementsByTag("div").text());
-			if(nachFeiertag && !tage.contains(i))
-			{
-				Data.addProperty("GourmetBeschreibung", m.group(1));
-				Data.addProperty("GourmetPreis", m.group(3));
-				addToTag(i+1, Data);
-			}
-			if(tage.contains(i))
-			{
-				nachFeiertag = true;
-				Data.addProperty("GourmetBeschreibung", m.group(1));
-				Data.addProperty("GourmetPreis", m.group(3));
-				addToTag(i+1, Data);
-			}
-			else
-			{
-				m.find();
-				Data.addProperty("GourmetBeschreibung", m.group(1));
-				Data.addProperty("GourmetPreis", m.group(3));
-				addToTag(i, Data);
-			}
-		}
-		Speiseplan.add("Monday", Monday);
-		Speiseplan.add("Tuesday", Tuesday);
-		Speiseplan.add("Wednesday", Wednesday);
-		Speiseplan.add("Thursday", Thursday);
-		Speiseplan.add("Friday", Friday);
-		System.out.println(gson.toJson(Speiseplan));	
+		System.out.println(gson.toJson(Speiseplan));
+		return Speiseplan;
 	}
-	private JsonObject createWeekJSONObject()
+	private String getMenueName(int m)
 	{
-		
-		JsonObject week = new JsonObject();
-		week.add("Monday", getFood(DayOfWeek.MONDAY));
-		week.add("Tuesday", getFood(DayOfWeek.TUESDAY));	
-		week.add("Wednesday",getFood(DayOfWeek.WEDNESDAY));	
-		week.add("Thursday",getFood(DayOfWeek.THURSDAY));	
-		week.add("Friday", getFood(DayOfWeek.FRIDAY));
-		return week;
+		String MenueNumber = "";
+		switch(m)
+		{
+			case 1: MenueNumber = "Funk";
+			break;
+			case 2: MenueNumber = "Lunch";
+			break;
+			case 3: MenueNumber = "Gourmet";
+			break;
+		}
+		return MenueNumber;
 	}
 	private void addToTag(int tag, JsonObject o)
 	{
 		
 		switch(tag)
 		{
-			case 0: Monday.add(o);
+			case 1: Speiseplan.add("Monday", o);
 					break;
-			case 1: Tuesday.add(o);
+			case 2: Speiseplan.add("Tueday", o);
 					break;
-			case 2:  Wednesday.add(o);
+			case 3: Speiseplan.add("Wednesday", o);
 					break;
-			case 3:  Thursday.add(o);
+			case 4: Speiseplan.add("Thursday", o);
 					break;
-			case 4:  Friday.add(o);
+			case 5: Speiseplan.add("Friday", o);
 					break;
 		}
 	}
