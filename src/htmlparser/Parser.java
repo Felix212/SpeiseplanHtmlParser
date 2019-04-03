@@ -30,10 +30,6 @@ public class Parser {
 	private int veggie = 1;
 	private int dessert = 2;
 	private Elements elementWeek;
-	private int proFunkMenue = 0;
-	private int lunchMenue = 5;
-	private int gourmetMenue = 10;
-	private int menueBase = 6;
 	JsonObject Speiseplan = new JsonObject();
 	public Parser(File in) throws IOException
 	{
