@@ -1,4 +1,5 @@
 package htmlparser;
+import java.awt.List;
 import java.io.File;
 import java.io.IOException;
 import java.time.DayOfWeek;
@@ -39,7 +40,7 @@ public class Parser {
 	public Parser() throws IOException, UnirestException
 	{
 		//WeekParser
-		HttpResponse<String> htmlWeek = Unirest.get("http://intranet.dw.com/top-menu/speiseplan/speiseplan-bonn/tagesansicht/wochenansicht-bonn.html?tx_ppwlunchmenu_pi1%5Bforward%5D=1&tx_ppwlunchmenu_pi1%5Btime%5D=1555401600&tx_ppwlunchmenu_pi1%5Blanguage%5D=de&cHash=723881c52132ff677dc1859d897fee16").header("Content-Type",
+		HttpResponse<String> htmlWeek = Unirest.get("http://intranet.dw.com/top-menu/speiseplan/speiseplan-bonn/tagesansicht/wochenansicht-bonn.html?tx_ppwlunchmenu_pi1%5Bforward%5D=1&tx_ppwlunchmenu_pi1%5Btime%5D=1555574400&tx_ppwlunchmenu_pi1%5Blanguage%5D=de&cHash=570aa9026b534cefd2417cc10ca401a8").header("Content-Type",
 				"application/json")
 				.basicAuth("_ADPassword", "_ADPassword2016")
 				.asString();
@@ -84,17 +85,39 @@ public class Parser {
 		Element table = elementWeek.select("table").get(0);
 		Elements rows = table.select("tr");
 		Matcher m;	
+		int fehlendertag = 0;
+		int[] feierTage =  checkFeiertage(rows);
 		for (int i = 1; i < 6; i++) {
 			JsonObject data = new JsonObject();
-			
-			for (int j = 1; j < rows.size(); j++) {
-				Element row = rows.get(j);
-				Elements cols = row.select("td");
-				cols.get(i);
-				m = p.matcher(cols.get(i).text());
-				m.find();
-				data.addProperty(getMenueName(j)+"Beschreibung", m.group(1));
-				data.addProperty(getMenueName(j)+"Preis", m.group(3));
+			for (int j = 1; j < rows.size(); j++) 
+			{
+				Elements tmp = rows.get(j).select("td");
+				if(feierTage[i-1] == 1)
+				{
+					fehlendertag = 1;
+				}
+				//Wenn erste Zeile --> Feiertag überspringen
+				if(rows.get(j).select("td").size() == 6 && feierTage[i-1] == 1 && rows.get(j).select("td").get(i).attr("rowspan").contains("3"))
+				{
+					break;
+				}
+				else
+				{
+					Element row = rows.get(j);
+					Elements cols = row.select("td");
+					//Fallunterscheidung für Zeilen mit 5 tr Elementen und Zeilen 6 tr --> vorheriges aus i auswählen wenn 5 tr Elementen
+					if(tmp.size() == 5 && fehlendertag == 1)
+					{
+						m = p.matcher(cols.get(i-1).text());
+					}
+					else
+					{
+						m = p.matcher(cols.get(i).text());
+					}
+					m.find();
+					data.addProperty(getMenueName(j)+"Beschreibung", m.group(1));
+					data.addProperty(getMenueName(j)+"Preis", m.group(3));
+				}			
 			}
 			addToTag(i, data);	
 		}
@@ -131,5 +154,17 @@ public class Parser {
 			case 5: Speiseplan.add("Friday", o);
 					break;
 		}
+	}
+	public int[] checkFeiertage(Elements rows)
+	{
+		int[] feierTage = {0,0,0,0,0};
+		for (int i = 1; i < 6; i++) {
+			if(rows.get(1).select("td").get(i).attr("rowspan").contains("3"))
+			{
+				feierTage[i-1] = 1;
+			}
+			
+		}
+		return feierTage;
 	}
 }
