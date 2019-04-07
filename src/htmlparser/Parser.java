@@ -2,9 +2,22 @@ package htmlparser;
 import java.awt.List;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.StringTokenizer;
+import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.jsoup.*;
@@ -19,12 +32,16 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 
 public class Parser {
 	private Pattern p = Pattern.compile("(\\D*)(\\s)((\\d*,\\d\\d\\s*-*\\s*){1,2}€?)(.*)");
-	private Document doc;
+	private Pattern p2 = Pattern.compile("(\\d{1,2})(.)(\\D{3})(\\D*)(\\d{4})(.*)");
+	private Pattern p3 = Pattern.compile("");
+	private Document docWeek;
+	private Document docDay;
 	//Login
 	String username = "_ADPassword";
 	String password = "_ADPassword2016";
 	String login = username + ":" + password;
 	String base64login = new String(Base64.getEncoder().encode(login.getBytes()));
+	
 	//Menues
 	private Elements elementDay;
 	private int tagesSuppe = 0;
@@ -34,25 +51,52 @@ public class Parser {
 	JsonObject Speiseplan = new JsonObject();
 	public Parser(File in) throws IOException
 	{
-		doc = Jsoup.parse(in, "UTF-8");
-		elementWeek = doc.getElementsByClass("ppw-speiseplan-aussen-woche");
+		docWeek = Jsoup.parse(in, "UTF-8");
+		elementWeek = docWeek.getElementsByClass("ppw-speiseplan-aussen-woche");
 	}
 	public Parser() throws IOException, UnirestException
 	{
+		
 		//WeekParser
-		HttpResponse<String> htmlWeek = Unirest.get("http://intranet.dw.com/top-menu/speiseplan/speiseplan-bonn/tagesansicht/wochenansicht-bonn.html?tx_ppwlunchmenu_pi1%5Bforward%5D=1&tx_ppwlunchmenu_pi1%5Btime%5D=1555574400&tx_ppwlunchmenu_pi1%5Blanguage%5D=de&cHash=570aa9026b534cefd2417cc10ca401a8").header("Content-Type",
-				"application/json")
-				.basicAuth("_ADPassword", "_ADPassword2016")
-				.asString();
-		doc = Jsoup.parse(htmlWeek.getBody());
-		elementWeek = doc.getElementsByClass("ppw-speiseplan-aussen-woche");
+		docWeek = getHtmlElement("http://intranet.dw.com/top-menu/speiseplan/speiseplan-bonn/tagesansicht/wochenansicht-bonn.html");
+		elementWeek = docWeek.getElementsByClass("ppw-speiseplan-aussen-woche");
 		//DayParser
-		HttpResponse<String> htmlDay = Unirest.get("http://intranet.dw.com/top-menu/speiseplan/speiseplan-bonn/tagesansicht.html").header("Content-Type",
-				"application/json")
+		docDay = getHtmlElement("http://intranet.dw.com/top-menu/speiseplan/speiseplan-bonn/tagesansicht.html");
+		elementDay = docWeek.getElementsByClass("ppw-speiseplan-text");	
+		
+	}
+	public Parser(String link) throws UnirestException
+	{
+		docWeek = getHtmlElement(link);
+		elementWeek = docWeek.getElementsByClass("ppw-speiseplan-aussen-woche");
+	}
+	private Document getHtmlElement(String link) throws UnirestException
+	{
+		HttpResponse<String> htmlWeek = Unirest.get(link)
+				.header("Content-Type", "application/json")
 				.basicAuth("_ADPassword", "_ADPassword2016")
 				.asString();
-		doc = Jsoup.parse(htmlDay.getBody());
-		elementDay = doc.getElementsByClass("ppw-speiseplan-text");		
+		Document htmldoc = Jsoup.parse(htmlWeek.getBody());
+		return htmldoc;
+	}
+	public int getPlanTime() throws ParseException
+	{
+		Matcher m = p2.matcher(docWeek.getElementsByClass("ppw-speiseplan-kopf-rechts").text());
+		m.find();
+		DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM").withLocale(Locale.GERMAN);
+		TemporalAccessor accessor = parser.parse(m.group(3));
+		int month = accessor.get(ChronoField.MONTH_OF_YEAR);
+		int year = Integer.parseInt(m.group(5));
+		int day = Integer.parseInt(m.group(1));
+		String ms = String.format("%02d", month);
+		String ds = String.format("%02d", day);
+		String ys = Integer.toString(year);
+		String dateString = ds+ms+ys;
+		DateFormat df = new SimpleDateFormat("ddMMyyyy", Locale.ENGLISH);
+		Date date = df.parse(dateString);
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		return cal.get(Calendar.WEEK_OF_YEAR);
 	}
 	public POJO_Day.Plan getDay()
 	{
@@ -72,12 +116,6 @@ public class Parser {
 		TagesPlan.addProperty("DessertPreis", m.group(3));
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		return gson.fromJson(TagesPlan, POJO_Day.Plan.class);
-	}
-	public POJO_Week.Plan getWeek() throws IOException
-	{
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        
-        return null;
 	}
 	public JsonObject getWeekFood()
 	{
@@ -166,5 +204,26 @@ public class Parser {
 			
 		}
 		return feierTage;
+	}
+	 
+	public String getValidWeekLinks() throws UnirestException
+	{
+		Parser tmpParser = new Parser(docWeek.select("th.ppw-speiseplan-funktionen-rechts > a").attr("href").toString());
+		if(tmpParser.isLinkValid())
+		{
+			tmpParser.getValidWeekLinks();
+			
+		}
+		else
+		{
+			
+		}
+		return base64login;
+	}
+	public boolean isLinkValid()
+	{
+		Matcher m;
+		m = p3.matcher(elementWeek.select("table").get(0).select("tr").get(1).select("td").get(1).text()); 
+		return m.find();
 	}
 }
