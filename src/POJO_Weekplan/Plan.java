@@ -1,25 +1,18 @@
 
-package POJO_Week;
+package POJO_Weekplan;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 public class Plan {
 
-    @SerializedName("Monday")
-    @Expose
+    
     private Monday monday;
-    @SerializedName("Tuesday")
-    @Expose
+    
     private Tuesday tuesday;
-    @SerializedName("Wednesday")
-    @Expose
+    
     private Wednesday wednesday;
-    @SerializedName("Thursday")
-    @Expose
+    
     private Thursday thursday;
-    @SerializedName("Friday")
-    @Expose
+    
     private Friday friday;
 
     public Monday getMonday() {

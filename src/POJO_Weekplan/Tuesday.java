@@ -1,29 +1,21 @@
 
-package POJO_Week;
+package POJO_Weekplan;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
-public class Monday {
+public class Tuesday {
 
-    @SerializedName("FunkBeschreibung")
-    @Expose
-    private String funkBeschreibung;
-    @SerializedName("FunkPreis")
-    @Expose
-    private String funkPreis;
-    @SerializedName("LunchBeschreibung")
-    @Expose
-    private String lunchBeschreibung;
-    @SerializedName("LunchPreis")
-    @Expose
-    private String lunchPreis;
-    @SerializedName("GourmetBeschreibung")
-    @Expose
-    private String gourmetBeschreibung;
-    @SerializedName("GourmetPreis")
-    @Expose
-    private String gourmetPreis;
+    
+    private String funkBeschreibung = "";
+   
+    private String funkPreis = "";
+    
+    private String lunchBeschreibung = "";
+    
+    private String lunchPreis = "";
+    
+    private String gourmetBeschreibung = "";
+   
+    private String gourmetPreis = "";
 
     public String getFunkBeschreibung() {
         return funkBeschreibung;

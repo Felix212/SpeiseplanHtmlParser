@@ -1,29 +1,22 @@
 
-package POJO_Day;
+package POJO_Dayplan;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+
 
 public class Plan {
 
-    @SerializedName("SuppeBeschreibung")
-    @Expose
-    private String suppeBeschreibung;
-    @SerializedName("SuppePreis")
-    @Expose
-    private String suppePreis;
-    @SerializedName("VeggieBeschreibung")
-    @Expose
-    private String veggieBeschreibung;
-    @SerializedName("VeggiePreis")
-    @Expose
-    private String veggiePreis;
-    @SerializedName("DessertBeschreibung")
-    @Expose
-    private String dessertBeschreibung;
-    @SerializedName("DessertPreis")
-    @Expose
-    private String dessertPreis;
+    
+    private String suppeBeschreibung = "";
+    
+    private String suppePreis = "";
+    
+    private String veggieBeschreibung = "";
+    
+    private String veggiePreis = "";
+    
+    private String dessertBeschreibung = "";
+    
+    private String dessertPreis = "";
 
     public String getSuppeBeschreibung() {
         return suppeBeschreibung;
