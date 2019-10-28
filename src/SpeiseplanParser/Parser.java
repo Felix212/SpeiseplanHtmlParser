@@ -1,6 +1,7 @@
 package SpeiseplanParser;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,10 +16,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import POJO_Dayplan.Aktionen;
+
 import com.google.gson.*;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
@@ -33,10 +39,12 @@ import POJO_Weekplan.Wednesday;
 
 
 public class Parser {
-	private Pattern p = Pattern.compile("(^.*)(\\s)+((\\d*,\\d\\d\\s*-?\\s*){1,2}\\s?€?)");
+	private Pattern p = Pattern.compile("(^.*)(\\s)+((\\d*,\\d\\d\\s*-?\\s*){1,2}\\s?â‚¬?)");
 	private Pattern p2 = Pattern.compile("(\\d{1,2})(.)(\\D{3})(\\D*)(\\d{4})(.*)");
 	private Pattern p3 = Pattern.compile("Es wurde noch keine Speise eingetragen");
 	private Pattern p4 = Pattern.compile("(\\D*)(\\d{1,2})(.*)");
+	private Pattern p5 = Pattern.compile("(\\d,\\d\\d)");
+	private Pattern p6 = Pattern.compile("(.*)(Aktionspreis \\d,\\d\\d.*)");
 	private Document docWeek;
 	private Document docDay;
 	//Login
@@ -48,9 +56,11 @@ public class Parser {
 	//Menues
 	private Elements elementDay;
 	private Elements elementDayDate;
-	private int tagesSuppe = 0;
-	private int veggie = 1;
-	private int dessert = 2;
+	private Elements elementSpecial;
+	private Elements elementSpecialDate;
+	private int[] tagArray = {0,1,2};
+	private int[] aktionsArray = {6,7,8};
+	
 	private Elements elementWeek;
 	JsonObject Speiseplan = new JsonObject();
 	public String Link;
@@ -62,6 +72,8 @@ public class Parser {
 	Friday fre = new Friday();
 	Plan Speiseplanobj = new Plan();
 	POJO_Dayplan.Plan Tagesplanobj = new POJO_Dayplan.Plan();
+	POJO_Dayplan.Aktionen Aktionenobj = new POJO_Dayplan.Aktionen();
+	POJO_Dayplan.Spezial Spezialobj = new POJO_Dayplan.Spezial();
 	public Parser(File in) throws IOException
 	{
 		docWeek = Jsoup.parse(in, "UTF-8");
@@ -77,6 +89,9 @@ public class Parser {
 		docDay = getHtmlElement("http://intranet.dw.com/top-menu/speiseplan/speiseplan-bonn/tagesansicht.html");
 		elementDay = docDay.getElementsByClass("ppw-speiseplan-text");	
 		elementDayDate = docDay.getElementsByClass("csc-header csc-header-n13");	
+		elementSpecial = docDay.getElementsByClass("csc-header csc-header-n11").next();
+		elementSpecialDate = docDay.getElementsByClass("csc-header csc-header-n11");
+		
 		
 	}
 	public Parser(String link) throws UnirestException
@@ -95,9 +110,31 @@ public class Parser {
 		Document htmldoc = Jsoup.parse(htmlWeek.getBody());
 		return htmldoc;
 	}
+	public POJO_Dayplan.Spezial getSpecialFood() throws ParseException {
+		Matcher m = p5.matcher(elementSpecial.select("b").get(2).text());
+		m.find();
+		String foodPrice = m.group(0);
+		foodPrice = foodPrice.concat(" â‚¬");
+		String foodName = elementSpecial.select("b").get(0).text();
+		m = p6.matcher(elementSpecial.text());
+		m.find();
+		String foodDescription = m.group(1);
+		// get Date
+		m = p4.matcher(elementSpecialDate.text());
+		m.find();
+		int dateIntranet = Integer.valueOf(m.group(2));
+		DateTime tmp = new DateTime();
+		DateTime specialDate = new DateTime(tmp.getYear(), tmp.getMonthOfYear(), dateIntranet, 0, 0, 0);
+		// set obj var
+		foodDescription = foodDescription.replaceAll(foodName, "").trim();
+		this.Spezialobj.setName(foodName);
+		this.Spezialobj.setDescription(foodDescription);
+		this.Spezialobj.setPrice(foodPrice);
+		this.Spezialobj.date = specialDate;
+		return this.Spezialobj;
+	}
 	public DateTime getPlanTime() throws ParseException
-	{
-		
+	{	
 		Matcher m = p2.matcher(docWeek.getElementsByClass("ppw-speiseplan-kopf-rechts").text());
 		m.find();
 		DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM").withLocale(Locale.GERMAN);
@@ -112,15 +149,14 @@ public class Parser {
 		DateFormat df = new SimpleDateFormat("ddMMyyyy", Locale.ENGLISH);
 		Date date = df.parse(dateString);
 		DateTime dt = new DateTime(date);
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
 		return dt;
 		
 	}
 	public POJO_Dayplan.Plan getDayFood()
 	{
+		
 		Matcher m;
-		m = p.matcher(elementDay.get(tagesSuppe).text());
+		m = p.matcher(elementDay.get(this.tagArray[0]).text());
 		m.find();
 		try {
 			Tagesplanobj.setSuppeBeschreibung(m.group(1));
@@ -131,7 +167,7 @@ public class Parser {
 		}
 		
 		
-		m = p.matcher(elementDay.get(veggie).text());
+		m = p.matcher(elementDay.get(this.tagArray[1]).text());
 		m.find();
 		try {
 			Tagesplanobj.setVeggieBeschreibung(m.group(1));
@@ -141,7 +177,7 @@ public class Parser {
 			System.out.println(e);
 		}
 		
-		m = p.matcher(elementDay.get(dessert).text());
+		m = p.matcher(elementDay.get(this.tagArray[2]).text());
 		m.find();
 		try {
 			Tagesplanobj.setDessertBeschreibung(m.group(1));
@@ -153,10 +189,46 @@ public class Parser {
 		
 		return Tagesplanobj;
 	}
+	public Aktionen getAktionen() {
+		Matcher m;
+		m = p.matcher(elementDay.get(this.aktionsArray[0]).text());
+		m.find();
+		try {
+			Aktionenobj.setAktion1(m.group(1));
+			Aktionenobj.setAktion1Preis(m.group(3));
+		} catch (Exception e) {
+			System.out.println("Could not find Aktion1");
+			System.out.println(e);
+		}
+		
+		
+		m = p.matcher(elementDay.get(this.aktionsArray[1]).text());
+		m.find();
+		try {
+			Aktionenobj.setAktion2(m.group(1));
+			Aktionenobj.setAktion2Preis(m.group(3));
+		} catch (Exception e) {
+			System.out.println("Could not find Aktion2");
+			System.out.println(e);
+		}
+		
+		m = p.matcher(elementDay.get(this.aktionsArray[2]).text());
+		m.find();
+		try {
+			Aktionenobj.setAktion3(m.group(1));
+			Aktionenobj.setAktion3Preis(m.group(3));
+		} catch (Exception e) {
+			System.out.println("Could not find Aktion3");
+			System.out.println(e);
+		}
+		
+		return Aktionenobj;
+	}
+	// compares current date with Intranetdate
 	public boolean TagesPlanUpdated() 
 	{
 		Matcher m;
-		m = p4.matcher(elementDayDate.select("h1").text());
+		m = p4.matcher(elementDayDate.text());
 		m.find();
 		int dateIntranet = Integer.valueOf(m.group(2));
 		DateTime dt = new DateTime();
@@ -178,16 +250,17 @@ public class Parser {
 				{
 					fehlendertag = 1;
 				}
-				//Wenn erste Zeile --> Feiertag überspringen
+				//Wenn erste Zeile --> Feiertag ï¿½berspringen
 				if(rows.get(j).select("td").size() == 6 && feierTage[i-1] == 1 && rows.get(j).select("td").get(i).attr("rowspan").contains("3"))
 				{
+					
 					break;
 				}
 				else
 				{
 					Element row = rows.get(j);
 					Elements cols = row.select("td");
-					//Fallunterscheidung für Zeilen mit 5 tr Elementen und Zeilen 6 tr --> vorheriges aus i auswählen wenn 5 tr Elementen
+					//Fallunterscheidung fï¿½r Zeilen mit 5 tr Elementen und Zeilen 6 tr --> vorheriges aus i auswï¿½hlen wenn 5 tr Elementen
 					if(tmp.size() == 5 && fehlendertag == 1)
 					{
 						m = p.matcher(cols.get(i-1).text());
@@ -197,9 +270,23 @@ public class Parser {
 						m = p.matcher(cols.get(i).text());
 					}
 					m.find();
-					data.addProperty(getMenueName(j)+"Beschreibung", m.group(1));
-					data.addProperty(getMenueName(j)+"Preis", m.group(3));
-				}			
+					
+					
+					try {
+						data.addProperty(getMenueName(j)+"Beschreibung", m.group(1));
+						data.addProperty(getMenueName(j)+"Preis", m.group(3));
+					} catch (Exception e) {
+						if(tmp.size() == 5 && fehlendertag == 1)
+						{
+							data.addProperty(getMenueName(j)+"Beschreibung", cols.get(i-1).text());
+						}
+						else
+						{
+							data.addProperty(getMenueName(j)+"Beschreibung", cols.get(i).text());
+						}
+							data.addProperty(getMenueName(j)+"Preis", "");
+						}
+					}		
 			}
 			addToTag(i, data);	
 		}
@@ -278,13 +365,17 @@ public class Parser {
 				}
 					break;
 			case 5: 
+				if(o.has("FunkBeschreibung") && o.has("LunchBeschreibung") && o.has("GourmetBeschreibung")) 
+				{
 					fre.setFunkBeschreibung(o.get("FunkBeschreibung").getAsString());
 					fre.setFunkPreis(o.get("FunkPreis").getAsString());
 					fre.setLunchBeschreibung(o.get("LunchBeschreibung").getAsString());
 					fre.setLunchPreis(o.get("LunchPreis").getAsString());
 					fre.setGourmetBeschreibung(o.get("GourmetBeschreibung").getAsString());
-					fre.setGourmetPreis(o.get("GourmetPreis").getAsString());
-					break;
+					fre.setGourmetPreis(o.get("GourmetPreis").getAsString());	
+				}
+				break;
+					
 		}
 	}
 	public int[] checkFeiertage(Elements rows)

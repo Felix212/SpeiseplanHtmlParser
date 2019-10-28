@@ -9,16 +9,13 @@ import POJO_Weekplan.Plan;
 public class Test {
 
 
-	public static void main(String[] args) throws IOException, UnirestException {
+	public static void main(String[] args) throws IOException, UnirestException, ParseException {
 		File file = new File("speiseplan_woche/Deutsche Welle Intranet  Wochenansicht Bonn.html");
 		
 		Parser parser = new Parser();
-		try {
-			parser.getPlanTime();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		POJO_Dayplan.Spezial day  = parser.getSpecialFood();
+		System.out.println(day.getDescription());
+
 	}
 	
 	 
